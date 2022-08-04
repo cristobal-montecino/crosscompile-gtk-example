@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cmake release",
+            "type": "shell",
+            "command": "cd build;cmake .. -DCMAKE_BUILD_TYPE=Release -G Ninja"
+        },
+        {
+            "label": "cmake debug",
+            "type": "shell",
+            "command": "cd build;cmake .. -DCMAKE_BUILD_TYPE=Debug -G Ninja"
+        },
+        {
+            "label": "mingw64 cmake release",
+            "type": "shell",
+            "command": "cd build;mingw64-cmake .. -DCMAKE_BUILD_TYPE=Release -G Ninja"
+        },
+        {
+            "label": "mingw64 cmake debug",
+            "type": "shell",
+            "command": "cd build;mingw64-cmake .. -DCMAKE_BUILD_TYPE=Debug -G Ninja"
+        },
+        {
+            "label": "mingw32 cmake release",
+            "type": "shell",
+            "command": "cd build;mingw32-cmake .. -DCMAKE_BUILD_TYPE=Release -G Ninja"
+        },
+        {
+            "label": "mingw32 cmake debug",
+            "type": "shell",
+            "command": "cd build;mingw32-cmake .. -DCMAKE_BUILD_TYPE=Debug -G Ninja"
+        },
+        {
+            "label": "ninja",
+            "type": "shell",
+            "command": "cd build;ninja"
+        },
+        {
+            "label": "run release",
+            "type": "shell",
+            "command": "bin/release/gtkexample"
+        },
+        {
+            "label": "run debug",
+            "type": "shell",
+            "command": "bin/debug/gtkexample"
+        },
+        {
+            "label": "clean build",
+            "type": "shell",
+            "command": "cd build; ninja clean; cd ..; rm -rf build; mkdir build; rm -rf bin/release; cd bin; mkdir release; cd ..; rm -rf bin/debug; cd bin; mkdir debug; cd ..;"
+        },
+        {
+            "label": "ninja install",
+            "type": "shell",
+            "command": "cd build; ninja install"
+        },
+        {
+            "label": "ninja && run release",
+            "type": "shell",
+            "command": "cd build; ninja; cd ..; bin/release/gtkexample"
+        }
+    ]
+}
